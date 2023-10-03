@@ -46,7 +46,7 @@ BLEAdvertisementData getOAdvertisementData() {
 }
 
 void loop() {
-  delay(50);
+  delay(45);
   
   BLEAdvertisementData advertisementData = getOAdvertisementData(); // Making random packet
   pAdvertising->setAdvertisementData(advertisementData); // Setting random packet
