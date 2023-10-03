@@ -13,7 +13,7 @@ void setup() {
   BLEServer *pServer = BLEDevice::createServer(); // Starting BLE Server
 
   pAdvertising = pServer->getAdvertising();
-  pAdvertising->setAdvertisementType(ADV_TYPE_DIRECT_IND_HIGH); // Setting advertisment type for high duty cycle
+  pAdvertising->setAdvertisementType(ADV_TYPE_DIRECT_IND_LOW); // Setting advertisment type for high duty cycle
 }
 
 BLEAdvertisementData getOAdvertisementData() {
@@ -50,11 +50,7 @@ void loop() {
   
   BLEAdvertisementData advertisementData = getOAdvertisementData(); // Making random packet
   pAdvertising->setAdvertisementData(advertisementData); // Setting random packet
-  pAdvertising->setMinInterval(0x20);
-  pAdvertising->setMaxInterval(0x20);
-  pAdvertising->setMinPreferred(0x20);
-  pAdvertising->setMaxPreferred(0x20);
   pAdvertising->start();
-  delay(20); // Advertising for 20ms should help discovering the BLE device according to apple (https://developer.apple.com/library/archive/qa/qa1931/_index.html) Not testet!! 
+  delay(20);
   pAdvertising->stop();
 }
