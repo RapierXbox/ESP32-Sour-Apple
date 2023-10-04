@@ -12,4 +12,6 @@ This was only testetet on a ESP-WROOM-32 on:
 The iPhone after around 30 seconds of spamming with some popups the iPhone starts to freeze. After a random looking amount of time the iPhone turns completly black and you can now force restart it (Volume UP, Volume Down, Hold power button). Sometimes the iPhone restarts by itself. In this procedure the ESP shouldnt get hot.
 # Things you dont wanna know
 I spilled coffee all over a lot of electronics while writing this :(
+
+
 My discord if you need help: rapierxbox
