@@ -33,7 +33,7 @@ def main():
             bt_packet = (16, 0xFF, 0x4C, 0x00, 0x0F, 0x05, 0xC1, types[random.randint(0, len(types) - 1)],
                          random.randint(0, 255), random.randint(0, 255), random.randint(0, 255), 0x00, 0x00, 0x10,
                          random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
-            struct_params = [20, 20, 0x03, 0, 0, (0,) * 6, (0x07, 0)]
+            struct_params = [20, 20, 3, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0]
             cmd_pkt = struct.pack("<HHBBB6BBB", *struct_params)
             bluez.hci_send_cmd(sock, 0x08, 0x0006, cmd_pkt)
             cmd_pkt = struct.pack("<B", 0x01)
