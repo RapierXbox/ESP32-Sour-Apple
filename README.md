@@ -6,7 +6,7 @@ Only use this on devices you own or when you have permisson to use it. I know yo
 
 This project is made only for educational purposes and is not made to break laws and or personal gain. The project has no warranty so if your break any of your devices the author is not responsable.
 # Testing
-This was only testetet on a ESP-WROOM-32 on: <br>
+This was tested on a ESP-WROOM-32 on: <br>
 -iPhone 12 Pro - iOS 17.0 (21A329)<br>
 RPi 4: <br>
 -iPhone XS - iOS 17.0 (21A329)<br>
