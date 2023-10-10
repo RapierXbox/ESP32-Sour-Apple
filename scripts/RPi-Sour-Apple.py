@@ -41,7 +41,7 @@ def main():
             cmd_pkt = struct.pack("<B%dB" % len(bt_packet), len(bt_packet), *bt_packet)
             bluez.hci_send_cmd(sock, 0x08, 0x0008, cmd_pkt)
 
-            sleep(0.04)
+            sleep(0.02)
             cmd_pkt = struct.pack("<B", 0x00)
             bluez.hci_send_cmd(sock, 0x08, 0x000A, cmd_pkt)
     except KeyboardInterrupt:
