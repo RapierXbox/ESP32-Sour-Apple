@@ -1,4 +1,4 @@
-#ESP32(Python for RPi) Sour Apple by @RapierXbox and @Amachik
+#ESP32(Python) Sour Apple by @RapierXbox and @Amachik
 import random
 import bluetooth._bluetooth as bluez
 from time import sleep
