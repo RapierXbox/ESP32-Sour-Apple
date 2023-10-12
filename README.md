@@ -12,7 +12,7 @@ RPi 4: <br>
 -iPhone XS - iOS 17.0 (21A329)<br>
 -iPhone 12 Pro - iOS 17.1 Beta 2
 # Behavior
-The iPhone after around 5 seconds of spamming with some popups the iPhone starts to freeze. After a random looking amount of time the iPhone turns completly black and you can now force restart it (Volume UP, Volume Down, Hold power button). Sometimes the iPhone restarts by itself. In this procedure the ESP shouldnt get hot.
+The iPhone after around 5 seconds of spamming with some popups the iPhone starts to freeze. After a random looking amount of time the iPhone turns completely black and you can now force restart it (Volume UP, Volume Down, Hold power button). Sometimes the iPhone restarts by itself. In this procedure the ESP shouldnt get hot.
 # Contributers:
 <a href="https://github.com/ECTO-1A">­@ECTO-1A</a>: Found the exploit<br>
 <a href="https://github.com/Willy-JL">­@WillyJL</a>: Portet the exploit to Flipper Zero<br>
