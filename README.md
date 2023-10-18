@@ -13,7 +13,7 @@ The exploit was originaly developed and discovered by ECTO-1A. I ported it to th
 This was tested on a ESP32S3 on: <br>
 -iPhone 14 Pro - iOS 17.1 (21B506 & 21B74)<br>
 
-This was tested on a ESP-WROOM-32 on: <br>
+ESP-WROOM-32: <br>
 -iPhone 12 Pro - iOS 17.0 (21A329)<br>
 
 RPi 4: <br>
