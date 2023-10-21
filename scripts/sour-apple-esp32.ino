@@ -16,10 +16,9 @@ void setup() {
 NimBLEAdvertisementData getOAdvertisementData() {
   NimBLEAdvertisementData randomAdvertisementData = NimBLEAdvertisementData();
   uint8_t packet[17];
-  uint8_t size = 17;
   uint8_t i = 0;
 
-  packet[i++] = size - 1;    // Packet Length
+  packet[i++] = 16;    // Packet Length
   packet[i++] = 0xFF;        // Packet Type (Manufacturer Specific)
   packet[i++] = 0x4C;        // Packet Company ID (Apple, Inc.)
   packet[i++] = 0x00;        // ...
