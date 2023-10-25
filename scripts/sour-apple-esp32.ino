@@ -8,6 +8,10 @@ NimBLEAdvertising *pAdvertising;
 void setup() {
   NimBLEDevice::init("");
 
+  delay(40);  // Wait a second to stabilize
+  NimBLEDevice::setOwnAddrType(BLE_OWN_ADDR_RANDOM);
+  delay(40);  // Wait a second to stabilize
+
   NimBLEServer *pServer = NimBLEDevice::createServer();
 
   pAdvertising = pServer->getAdvertising();
