@@ -5,6 +5,13 @@
 
 NimBLEAdvertising *pAdvertising;
 
+//In some cases it does not detect the function of the library, so it is better to create it: jp
+void esp_fill_random(uint8_t* buf, size_t len) {
+  for(size_t i = 0; i < len; i++) {
+    buf[i] = random(0, 1000);  
+  }
+}
+
 void setup() {
   NimBLEDevice::init("");
 
