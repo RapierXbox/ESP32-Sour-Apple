@@ -21,7 +21,8 @@ ESP-WROOM-32: <br>
 
 RPi 4: <br>
 • iPhone XS - iOS 17.0 (21A329)<br>
-• iPhone 12 Pro - iOS 17.1 Beta 2
+• iPhone 12 Pro - iOS 17.1 Beta 2<br>
+• iPhone 11 Pro - iOS 17.1.2 (21B101)
 
 # Behavior
 The iPhone starts to freeze after a few seconds of it getting spammed with BLE pairing requests. After a random looking amount of time the iPhone turns completely black and you can now force restart it (Volume UP, Volume Down, Hold power button), or, alternatively, wait for it to restart by itself. While testing (on an ESP32-S3), it reaches stable temps at ~57c, so heat shouldn't be of concern. Some PI models report to get a little bit hotter than that, however it still should not be an issue.
