@@ -37,7 +37,8 @@ The iPhone starts to freeze after a few seconds of it getting spammed with BLE p
 # Contributors:
 <a href="https://github.com/ECTO-1A">­@ECTO-1A</a>: Found the exploit<br>
 <a href="https://github.com/Willy-JL">­@WillyJL</a>: Portet the exploit to Flipper Zero<br>
-<a href="https://github.com/Amachik">­@Amachik</a>: Helped make the RPi scripts<br>
+<a href="https://github.com/Amachik">­@Amachik</a>: Helped make the RPi script<br>
+<a href="https://github.com/N1-TR0">@N1-TR0</a>: Made the micropython script<br>
 
 # Things you don't want to know
 I spilled coffee all over a lot of electronics while writing this :(
