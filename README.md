@@ -40,6 +40,16 @@ The iPhone starts to freeze after a few seconds of it getting spammed with BLE p
 <a href="https://github.com/Amachik">­@Amachik</a>: Helped make the RPi script<br>
 <a href="https://github.com/N1-TR0">@N1-TR0</a>: Made the micropython script<br>
 
+# Common Error
+If you have a compilation error telling you the esp_fill_random was not declared there is a easy fix. The esp_fill_random is a hardware random generation function and available on most ESP32's. There are two fixes for it. Firstly you can try to choose another ESP32 board and just compile for it and hope that it works or you can add these lines of code:
+```
+void esp_fill_random(uint8_t* buf, size_t len) {
+  for(size_t i = 0; i < len; i++) {
+    buf[i] = random(0, 1000);
+  }
+}
+```
+
 # Things you don't want to know
 I spilled coffee all over a lot of electronics while writing this :(
 
