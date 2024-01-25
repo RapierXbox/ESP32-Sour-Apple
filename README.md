@@ -54,4 +54,5 @@ void esp_fill_random(uint8_t* buf, size_t len) {
 I spilled coffee all over a lot of electronics while writing this :(
 
 # Need help?
-My discord if you need help: rapierxbox
+My discord if you need help: rapierxbox<br>
+or open a issue
