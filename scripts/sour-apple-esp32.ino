@@ -8,6 +8,10 @@ NimBLEAdvertising *pAdvertising;
 void setup() {
   NimBLEDevice::init("");
 
+  esp_ble_tx_power_set(ESP_BLE_PWR_TYPE_DEFAULT, ESP_PWR_LVL_P9); //This should increase transmitting power to 9dBm
+  esp_ble_tx_power_set(ESP_BLE_PWR_TYPE_ADV, ESP_PWR_LVL_P9); //Not sure if this works with NimBLE
+  esp_ble_tx_power_set(ESP_BLE_PWR_TYPE_SCAN ,ESP_PWR_LVL_P9);
+
   NimBLEServer *pServer = NimBLEDevice::createServer();
 
   pAdvertising = pServer->getAdvertising();
