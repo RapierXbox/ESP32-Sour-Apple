@@ -3,29 +3,6 @@ import struct
 import time
 import random
 
-class BLEDevice:
-    def __init__(self):
-        self.adapter = _bleio.adapter
-
-    def setup_device(self):
-        if not self.adapter.enabled:
-            self.adapter.enabled = True
-
-    def start_advertising(self, manufacturer_id, watch_id):
-        prepended_bytes = bytes.fromhex("010002000101FF000043")
-        watch_bytes = bytes.fromhex(watch_id)
-        manufacturer_specific_data = struct.pack('<H', manufacturer_id) + prepended_bytes + watch_bytes
-
-        ad_type_flags = bytes([0x02, 0x01, 0x06])
-        manufacturer_data_length = len(manufacturer_specific_data) + 1
-        bt_packet = ad_type_flags + bytes([manufacturer_data_length, 0xFF]) + manufacturer_specific_data
-
-        self.adapter.start_advertising(bt_packet, connectable=False, interval=0.1)
-        time.sleep(0.03)
-
-    def stop_advertising(self):
-        self.adapter.stop_advertising()
-
 def spoof_mac_address():
     current_address = _bleio.adapter.address
     print("current address:", current_address)
